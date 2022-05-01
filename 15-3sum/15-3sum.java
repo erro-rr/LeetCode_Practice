@@ -19,9 +19,9 @@ class Solution {
                     while(nums[j]==nums[j-1]&& j<k){
                         j++;
                     }
-                   /*while(nums[k]==nums[k-1]&& j<k){
+                   while(nums[k]==nums[k-1]&& j<k){
                         k--;
-                    }*/
+                    }
                 }
                     else if(sum<0){
                         j++;
