@@ -23,14 +23,29 @@ class GFG {
 class Solution {
     static String isSumOfTwo(int N){
         // code here
+        // Using Sieve Method
+        
+        boolean prime[]=new boolean[N+1];
+        for(int i=2;i<=N;i++){
+            prime[i]=true;
+        }
+        for(int i=2;i*i<=N;i++){
+            if(prime[i]==true){
+                for(int j=i*i;j<=N;j=j+i){
+                    prime[j]=false;
+                }
+            }
+        }
+        
+        
         for(int i=2;i<=N/2;i++){
-            if(prime(N-i)&&prime(i)){
+            if(prime[i] && prime[N-i]){
             return "Yes";
         }
         }
         return "No";
     }
-    static boolean prime(int N){
+   /* static boolean prime(int N){
        if(N<2){
            return false;
        }
@@ -40,5 +55,5 @@ class Solution {
            }
        }
        return true;
-    }
+    } */
 }
