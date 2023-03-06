@@ -24,6 +24,7 @@ class Solution {
         // code here
         int temp=n;
         int ans=0;
+      
         while(n>0){
             int rem=n%10;
             n=n/10;
