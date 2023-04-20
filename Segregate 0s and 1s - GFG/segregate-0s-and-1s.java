@@ -36,22 +36,19 @@ public class Main {
 class Solution {
     void segregate0and1(int[] arr, int n) {
         // code here
-        int left=0;
-        int right=n-1;
-        while(left<right){
-            while(arr[left]==0 && left<right){
-                left++;
+        int count=0;
+        int count2=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]==0){
+                count++;
             }
-            while(arr[right]==1 && left<right){
-                right--;
-            }
-            
-            if(left<right){
-                arr[left]=0;
-                arr[right]=1;
-                left++;
-                right--;
-            }
+        }
+        count2=n-count;
+        for(int i=0;i<count;i++){
+            arr[i]=0;
+        }
+        for(int i=count;i<n;i++){
+            arr[i]=1;
         }
     }
 
