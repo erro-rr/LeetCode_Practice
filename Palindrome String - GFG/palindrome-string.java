@@ -25,14 +25,19 @@ class GFG {
 class Solution {
     int isPalindrome(String S) {
         // code here
-        String ans="";
-        for(int i=S.length()-1;i>=0;i--){
-            ans +=S.charAt(i);
+        
+        int i=0;
+        int j=S.length()-1;
+        
+        while(i<=j){
+            if(S.charAt(i)!=S.charAt(j)){
+               return 0;
+            }
+            else{
+                 i++;
+                j--;
+            }
         }
-        if(ans.equals(S)){
-            return 1;
-        }
-        return 0;
+        return 1;
     }
-    
 };
