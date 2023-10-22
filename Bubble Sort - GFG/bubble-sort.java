@@ -14,19 +14,16 @@ class Solution
 	public static void bubbleSort(int arr[], int n)
     {
         //code here
-        if(n==1||n==0){
-            return;
-        }
-        for(int i=0;i<n-1;i++){
-            if(arr[i]>arr[i+1]){
-                int temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
         }
     }
-     bubbleSort(arr,n-1);
-    }
-     
 }
 
 //{ Driver Code Starts.
